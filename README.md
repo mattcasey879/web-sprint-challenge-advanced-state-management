@@ -167,6 +167,19 @@ Example of object created in Smurf DB:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. What problem does the context API help solve?
-2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  it stops prop drilling 
+
+2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece 
+do?
+  actions are objects that tell the reducer what case from the switch case in the reducer to update state or do any other logic for that specific action.
+    reducer stores the logic known for updating the state based on the action creator.
+    a store holds the state for the entire application and is an alternative to context API,
+    you can use the store to avoid prop drilling and only use certain parts of the state in the component you neeed them in.
+ Why is the store known as a 'single source of truth' in a redux application?
+    by having your components controlled by state it will be using the single "true source" from state. So its rendering its data from state rather than the DOM
+
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+    redux thunk allows you use a middleware, a library that does something between actions and the reducer, to make it asynchronous and it can return functions in your reducer instead of just actions.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+    I like the redux/store state management system. While it may be hard to set up initally, I feel it is more powerful than context API. Context API may be easier to use "out of the box" but once you get your store set up and working its easier to pay attention to your state and manipulate it as you need to. 
